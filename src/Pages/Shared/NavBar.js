@@ -15,7 +15,7 @@ const NavBar = () => {
         <li className='text-primary'><Link to='/about'>About</Link></li>
         <li className='text-primary'><Link to='/appoinment'>Appoinment</Link></li>
         <li className='text-primary'><Link to='/review'>Reviews</Link></li>
-        <li className='text-primary'><Link to='/purchase'>Purchase</Link></li>
+
         {
             user && <li className='text-primary'><Link to='/dashboard'>Dashboard</Link></li>
         }
