@@ -17,8 +17,8 @@ const ProductSection = () => {
     }, []);
     return (
         <div className='lg:mx-32 mt-32'>
-            <div className='flex gap-5'>
-                <div className='lg:flex-none w-40  hidden lg:block lg:mr-10'>
+            <div className='flex  gap-5'>
+                <div className='lg:flex-none w-40 hidden lg:block lg:mr-10'>
                     <div>
                         <h1 className='bg-secondary pl-5 py-2 text-white hover:text-primary rounded'>Category</h1>
                         <div >
@@ -44,7 +44,7 @@ const ProductSection = () => {
                 </div>
                 <div className='lg:flex-auto base-100'>
                     <div>
-                        <h3 className='font-bold text-2xl mb-3'>Products:{products.length}</h3>
+                        <h3 className='font-bold text-3xl mb-3 text-primary font-serif'>Products</h3>
                         <hr />
                         <div className='mt-10 grid grid-rows-1 gap-5'>
                             {
