@@ -3,25 +3,14 @@ import React from 'react';
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-500">
-                <div id="item1" className="carousel-item w-full">
-                    <img src="https://i.ibb.co/mRNkfLh/painter-rolling-white-paint-over-old-orange-wall-picture-id181896311-b-1-k-20-m-181896311-s-170667a.jpg" className="w-full" alt='' />
+            <div class="hero min-h-screen" style={{ "background-image": "url(https://media.istockphoto.com/photos/paint-roller-picture-id104280159?k=20&m=104280159&s=612x612&w=0&h=cX1Wz08-2ItF_XSVgj0a04WU6feil6OI3Gw0Ep1cdwc=)" }}>
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold">MANUFACTURER OF PREMIUM QUALITY PAINT ROLLERS & APPLICATORS</h1>
+                        <button class="btn btn-primary px-10">Look for Dealer</button>
+                    </div>
                 </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" className="w-full" alt='' />
-                </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" className="w-full" alt='' />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" className="w-full" alt='' />
-                </div>
-            </div>
-            <div className="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" className="btn btn-xs btn-primary">1</a>
-                <a href="#item2" className="btn btn-xs btn-primary">2</a>
-                <a href="#item3" className="btn btn-xs btn-primary">3</a>
-                <a href="#item4" className="btn btn-xs btn-primary">4</a>
             </div>
         </div>
     );
