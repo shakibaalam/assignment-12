@@ -12,7 +12,7 @@ import PurchasePage from './Pages/PurchasePage/PurchasePage';
 
 function App() {
   return (
-    <div className='container font-serif'>
+    <div className='container font-sans'>
       <NavBar></NavBar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
