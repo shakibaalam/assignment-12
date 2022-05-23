@@ -12,14 +12,19 @@ const NavBar = () => {
     };
     const menuItems = <>
         <li className='text-primary'><Link to='/home'>Home</Link></li>
-        <li className='text-primary'><Link to='/about'>About</Link></li>
-        <li className='text-primary'><Link to='/appoinment'>Appoinment</Link></li>
+        <li className='text-primary'><Link to='/products'>Products</Link></li>
+        <li className='text-primary'><Link to='/blog'>Blog</Link></li>
         <li className='text-primary'><Link to='/review'>Reviews</Link></li>
 
         {
             user && <li className='text-primary'><Link to='/dashboard'>Dashboard</Link></li>
         }
+
         <li className='text-primary'>{user ? <Link onClick={logout} to='/login'>Sign Out</Link> : <Link to='/login'>Login</Link>}</li>
+
+        {
+            user && <li className='text-primary items-center'>{user.displayName}</li>
+        }
     </>
     return (
         <div className="navbar bg-base-200 justify-between">

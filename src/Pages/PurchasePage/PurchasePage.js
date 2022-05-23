@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,7 @@ const PurchasePage = () => {
     const { id } = useParams();
     const [product] = useProductDetail(id);
     const { name, img, price, desc, quantity, available, _id } = product;
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, watch, formState: { errors, isValid }, handleSubmit, reset } = useForm({ mode: "onChange" });
 
     const onSubmit = data => {
         console.log(data);
@@ -27,6 +27,7 @@ const PurchasePage = () => {
 
             });
     }
+
     return (
         <div>
             <div className="hero">
@@ -114,7 +115,7 @@ const PurchasePage = () => {
 
                                         </div>
 
-                                        <input className='btn btn-primary text-white uppercase font-bold  w-full max-w-xs' type="submit" />
+                                        <input disabled={!isValid} className='btn btn-primary text-white uppercase font-bold  w-full max-w-xs' type="submit" />
 
                                     </form>
                                 </div>
