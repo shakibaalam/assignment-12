@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useProductDetail from '../../hooks/useProductDetail';
 
@@ -13,18 +14,29 @@ const PurchasePage = () => {
     const { register, formState: { errors, isValid }, handleSubmit, reset } = useForm({ mode: "onChange" });
 
     const onSubmit = data => {
-        console.log(data);
+        const order = {
+            userName: user?.displayName,
+            email: user?.email,
+            productName: name,
+            productImg: img,
+            address: data.address,
+            phn: data.phn,
+            price: price,
+            quantity: data.quantity
+        }
+        console.log(order);
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(order)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                reset()
+                toast.success(`Your order for ${name} is successfully done`)
+                reset();
 
             });
     }
@@ -35,6 +47,10 @@ const PurchasePage = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <div className="card  bg-base-100 shadow-xl">
+                            <div className='card-body font-bold text-blue-900'>
+                                <h2 className='text-3xl'>{user?.displayName}</h2>
+                                <h3 className='text-xl'>{user?.email}</h3>
+                            </div>
                             <figure><img src={img} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{name}</h2>
@@ -56,16 +72,16 @@ const PurchasePage = () => {
                                             <label className="label">
                                                 <span className="label-text">Name</span>
                                             </label>
-                                            <input type="text" value={user?.displayName || ''} className="input input-bordered w-full max-w-xs"
+                                            <input type="text" value={name} className="input input-bordered w-full max-w-xs"
                                                 {...register("name")} />
 
                                         </div>
                                         <div className="form-control w-full max-w-xs text-center">
                                             <label className="label">
-                                                <span className="label-text">Email</span>
+                                                <span className="label-text">Image</span>
                                             </label>
-                                            <input type="email" value={user?.email || ''} className="input input-bordered w-full max-w-xs"
-                                                {...register("email")} />
+                                            <input type="text" value={img} className="input input-bordered w-full max-w-xs"
+                                                {...register("img")} />
                                         </div>
 
                                         <div className="form-control w-full max-w-xs text-center">
@@ -73,7 +89,15 @@ const PurchasePage = () => {
                                                 <span className="label-text">Address</span>
                                             </label>
                                             <input type="text" placeholder='Place your address' className="input input-bordered w-full max-w-xs"
-                                                {...register("address")} />
+                                                {...register("address", {
+                                                    required: {
+                                                        value: true,
+                                                        message: 'address is required'
+                                                    }
+                                                })} />
+                                            <label className="label">
+                                                {errors?.address?.type === 'required' && <span className="label-text-alt text-red-600 ">{errors?.address.message}</span>}
+                                            </label>
 
                                         </div>
                                         <div className="form-control w-full max-w-xs text-center">
@@ -81,7 +105,24 @@ const PurchasePage = () => {
                                                 <span className="label-text">Phone number</span>
                                             </label>
                                             <input type="number" placeholder='Place your number' className="input input-bordered w-full max-w-xs"
-                                                {...register("phn")} />
+                                                {...register("phn", {
+                                                    required: {
+                                                        value: true,
+                                                        message: 'phn is required'
+                                                    }
+                                                })} />
+                                            <label className="label">
+                                                {errors?.phn?.type === 'required' && <span className="label-text-alt text-red-600 ">{errors?.phn.message}</span>}
+                                            </label>
+
+                                        </div>
+                                        <div className="form-control w-full max-w-xs text-center">
+                                            <label className="label">
+                                                <span className="label-text">Price</span>
+                                            </label>
+                                            <input type='number' value={price} className="input input-bordered w-full max-w-xs"
+                                                {...register("price"
+                                                )} />
 
                                         </div>
                                         <div className="form-control w-full max-w-xs text-center">

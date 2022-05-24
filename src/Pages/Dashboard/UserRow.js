@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserRow = ({ user, index, refetch }) => {
     console.log(user);
-    const { email, photoURL } = user
+    const { email } = user
     return (
         <tr>
             <th>{index + 1}</th>
