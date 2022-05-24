@@ -20,6 +20,8 @@ const Dashboard = () => {
 
                         <li className='hover:text-primary'><Link to='/dashboard'>My Profile</Link></li>
                         <li><Link to='/dashboard/review'>Add Review</Link></li>
+                        <li><Link to='/dashboard/manage'>Manage users</Link></li>
+                        <li><Link to='/dashboard/allOrder'>All orders</Link></li>
 
                     </ul>
 
