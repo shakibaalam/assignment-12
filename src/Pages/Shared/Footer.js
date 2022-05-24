@@ -52,7 +52,7 @@ const Footer = () => {
                         <h2 className=' text-xl mb-5'>Newsletter</h2>
                         <p className='mt-3 text-accent'>Subscribe to our newsletter for updates</p>
                         <div className='my-5'>
-                            <input type="text" placeholder="Email Address" class="input input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="Email Address" className="input input-bordered w-full max-w-xs" />
                         </div>
                         <button className="btn btn-primary px-8 hover:btn-secondary">Subscribe</button>
                     </div>

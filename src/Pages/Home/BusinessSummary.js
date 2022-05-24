@@ -4,7 +4,7 @@ import { AiOutlineFlag } from 'react-icons/ai';
 const BusinessSummary = () => {
     return (
         <div className='lg:mx-20 my-32'>
-            <h1 class="text-4xl text-center text-blue-900 font-bold  my-10">Millions Business Trust Us</h1>
+            <h1 className="text-4xl text-center text-blue-900 font-bold  my-10">Millions Business Trust Us</h1>
 
             <div className='lg:flex grid-cols-1 text-white font-bold text-center'>
 
