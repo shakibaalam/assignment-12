@@ -1,26 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Register = () => {
-    const navigate = useNavigate();
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const [createUserWithEmailAndPassword, , user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || googleUser)
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user || googleUser) {
-            navigate('/appoinment');
-        }
-    }, [googleUser, user, navigate]);
-
-    if (googleLoading || loading) {
+    if (googleLoading || loading || updating) {
         return <Loading></Loading>
     }
     let signUpError;
@@ -28,14 +28,17 @@ const Register = () => {
         signUpError = <p className='text-red-600'>{googleError?.message || error?.message || updateError?.message}</p>
     }
 
+    if (token) {
+        navigate('/');
+    }
+
     const onSubmit = async data => {
-        console.log(data);
+        // console.log(data);
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        toast('profile updated');
+        console.log('update done');
 
     };
-    console.log(user);
     return (
         <div className="card w-1/2 mx-auto my-auto bg-base-100 shadow-xl">
             <div className="card-body">

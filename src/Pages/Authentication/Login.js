@@ -3,6 +3,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Login = () => {
@@ -15,12 +16,13 @@ const Login = () => {
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const { register, watch, formState: { errors }, handleSubmit } = useForm();
+    const [token] = useToken(googleUser || user)
 
     useEffect(() => {
-        if (googleUser || user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [googleUser, user, from, navigate]);
+    }, [googleUser, user, token, from, navigate]);
 
     if (googleLoading || loading) {
         return <Loading></Loading>

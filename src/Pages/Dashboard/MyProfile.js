@@ -29,7 +29,7 @@ const MyProfile = () => {
             {
                 edit && <div>
                     <div>
-                        <h2 className='text-2xl text-purple-600 font-bold'>Add a new Doctor!!!!</h2>
+                        <h2 className='text-2xl font-bold'>Edit your Profile!!!!</h2>
                         <div className='mt-5'>
                             <form onSubmit={handleSubmit(onSubmit)} className=' grid grid-cols-1 gap-3 justify-items-center'>
 
@@ -52,25 +52,44 @@ const MyProfile = () => {
                                 </div>
                                 <div className="form-control w-full max-w-xs text-center">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text">Address</span>
                                     </label>
-                                    <input type="email" placeholder="Enter your email" className="input input-bordered w-full max-w-xs"
-                                        {...register("email", {
+                                    <input type="text" placeholder="Enter your email" className="input input-bordered w-full max-w-xs"
+                                        {...register("address", {
                                             required: {
                                                 value: true,
-                                                message: 'Email is required'
-                                            },
-                                            pattern: {
-                                                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                                message: 'Provide a valid pattern'
+                                                message: 'address is required'
                                             }
                                         })} />
 
                                     <label className="label">
-                                        {errors.email?.type === 'required' && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
-
-                                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600">{errors.email.message}</span>}
+                                        {errors.address?.type === 'required' && <span className="label-text-alt text-red-600">{errors.address.message}</span>}
                                     </label>
+
+                                </div>
+                                <div className="form-control w-full max-w-xs text-center">
+                                    <label className="label">
+                                        <span className="label-text">Phone</span>
+                                    </label>
+                                    <input type="number" placeholder="Enter your email" className="input input-bordered w-full max-w-xs"
+                                        {...register("phn", {
+                                            required: {
+                                                value: true,
+                                                message: 'Provide your phn no.'
+                                            }
+                                        })} />
+
+                                    <label className="label">
+                                        {errors.phn?.type === 'required' && <span className="label-text-alt text-red-600">{errors.phn.message}</span>}
+                                    </label>
+
+                                </div>
+                                <div className="form-control w-full max-w-xs text-center">
+                                    <label className="label">
+                                        <span className="label-text">LinkedIn Link</span>
+                                    </label>
+                                    <input type="text" placeholder="Enter your linkedIn link" className="input input-bordered w-full max-w-xs"
+                                        {...register("phn")} />
 
                                 </div>
 
