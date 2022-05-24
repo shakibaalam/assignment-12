@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,7 @@ const PurchasePage = () => {
     const { id } = useParams();
     const [product] = useProductDetail(id);
     const { name, img, price, desc, quantity, available, _id } = product;
-    const { register, watch, formState: { errors, isValid }, handleSubmit, reset } = useForm({ mode: "onChange" });
+    const { register, formState: { errors, isValid }, handleSubmit, reset } = useForm({ mode: "onChange" });
 
     const onSubmit = data => {
         console.log(data);
@@ -24,6 +24,7 @@ const PurchasePage = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                reset()
 
             });
     }
