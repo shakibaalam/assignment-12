@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteUser from './DeleteUser';
 import UserRow from './UserRow';
 
 const ManageUsers = () => {
+    const [deleteUser, setDeleteUser] = useState(null)
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
         headers: {
@@ -35,11 +37,19 @@ const ManageUsers = () => {
                                 refetch={refetch}
                                 user={user}
                                 index={index}
+                                setDeleteUser={setDeleteUser}
                             ></UserRow>)
                         }
                     </tbody>
                 </table>
             </div>
+            {
+                deleteUser && <DeleteUser
+                    deleteUser={deleteUser}
+                    setDeleteUser={setDeleteUser}
+                    refetch={refetch}
+                ></DeleteUser>
+            }
         </div>
     );
 };
