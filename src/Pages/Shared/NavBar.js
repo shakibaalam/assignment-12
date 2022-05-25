@@ -45,7 +45,7 @@ const NavBar = () => {
                 <Link className='hidden lg:block' to='/'><img width={100} src='https://i.ibb.co/y4wj5BD/small-8039-628994c2243e7.png' alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 text-lg mr-3">
+                <ul className="menu menu-horizontal p-0 text-lg font-semibold  mr-3">
                     {menuItems}
                 </ul>
             </div>

@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../../hooks/useProducts';
 import Feature from './Feature';
 import Product from './Product';
 
 const ProductSection = () => {
-    const [products, setProducts] = useState([]);
+    const [products] = useProducts();
     const [featured, setFeatured] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+
     useEffect(() => {
         fetch('http://localhost:5000/featured')
             .then(res => res.json())

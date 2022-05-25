@@ -48,7 +48,8 @@ const MyProfile = () => {
                     address: data.address,
                     phone: data.phn,
                     LinkedIn: data.link,
-                    photoURL: img
+                    photoURL: img,
+                    education: data.education
                 }
                 fetch(`http://localhost:5000/user/${user?.email}`, {
                     method: 'PATCH',
@@ -78,8 +79,12 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <div className='my-5'>
-                    <h2 className='text-3xl text-blue-900 font-bold'>{mongoUser?.name}</h2>
+                    <h2 className='text-3xl text-blue-900 font-bold'>{mongoUser?.name} <span className='text-lg text-secondary'>({mongoUser?.role})</span></h2>
                     <h4>{mongoUser?.email}</h4>
+                    <p className='mt-2'>Education: {mongoUser?.education}</p>
+                    <p className='mt-2'>Address: {mongoUser?.address}</p>
+                    <p className='mt-2'>Phn no: {mongoUser?.phone}</p>
+                    <p className='mt-2'>LinkedIn link: {mongoUser?.LinkedIn}</p>
                     <button onClick={() => setEdit(mongoUser)} className="btn btn-primary my-4 px-4"><FaUserEdit className='mr-2 text-xl'></FaUserEdit> Edit Profile</button>
                 </div>
             </div>
@@ -122,6 +127,14 @@ const MyProfile = () => {
                                     <label className="label">
                                         {errors.address?.type === 'required' && <span className="label-text-alt text-red-600">{errors.address.message}</span>}
                                     </label>
+
+                                </div>
+                                <div className="form-control w-full max-w-xs text-center">
+                                    <label className="label">
+                                        <span className="label-text">Education</span>
+                                    </label>
+                                    <input type="text" placeholder="Enter your education qualification" className="input input-bordered w-full max-w-xs"
+                                        {...register("education")} />
 
                                 </div>
                                 <div className="form-control w-full max-w-xs text-center">

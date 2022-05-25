@@ -31,6 +31,8 @@ const Dashboard = () => {
                             admin && <>
                                 <li><Link to='/dashboard/manage'>Manage users</Link></li>
                                 <li><Link to='/dashboard/allOrder'>All orders</Link></li>
+                                <li><Link to='/dashboard/addProduct'>Add product</Link></li>
+                                <li><Link to='/dashboard/manageProducts'>Manage products</Link></li>
                             </>
 
                         }

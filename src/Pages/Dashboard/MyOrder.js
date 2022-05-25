@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
@@ -34,7 +34,7 @@ const MyOrder = () => {
             {!orders.length ?
                 <div>
                     <h2 className='text-lg'>Haven't order yet ?</h2>
-                    <Link to='/'> <button className="btn btn-xs btn-primary my-4 px-4 ">Order now</button></Link>
+                    <Link to='/products'> <button className="btn btn-xs btn-primary my-4 px-4 ">Order now</button></Link>
                 </div>
                 :
                 <div>
