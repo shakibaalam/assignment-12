@@ -79,7 +79,7 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <div className='my-5'>
-                    <h2 className='text-3xl text-blue-900 font-bold'>{mongoUser?.name} <span className='text-lg text-secondary'>({mongoUser?.role})</span></h2>
+                    <h2 className='text-3xl text-blue-900 font-bold'>{mongoUser?.name ? mongoUser?.name : user?.displayName} <span className='text-lg text-secondary'>({mongoUser?.role ? mongoUser?.role : 'user'})</span></h2>
                     <h4>{mongoUser?.email}</h4>
                     <p className='mt-2'>Education: {mongoUser?.education}</p>
                     <p className='mt-2'>Address: {mongoUser?.address}</p>
