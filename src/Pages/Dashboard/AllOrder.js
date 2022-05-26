@@ -12,7 +12,7 @@ const AllOrder = () => {
     // const [pending, setPending] = useState('');
 
     //get all orders
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/allorders`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://sheltered-scrubland-72081.herokuapp.com/allorders`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const AllOrder = () => {
     }
 
     const cancelOrder = (id) => {
-        fetch(`http://localhost:5000/allOrders/${id}?email=${cancel?.email}`, {
+        fetch(`https://sheltered-scrubland-72081.herokuapp.com/allOrders/${id}?email=${cancel?.email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -50,7 +50,7 @@ const AllOrder = () => {
     }
 
     const handlePending = order => {
-        fetch(`http://localhost:5000/allOrders/${order._id}?email=${order?.email}`, {
+        fetch(`https://sheltered-scrubland-72081.herokuapp.com/allOrders/${order._id}?email=${order?.email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

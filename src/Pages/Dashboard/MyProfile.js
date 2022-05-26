@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: mongoUser, isLoading, refetch } = useQuery(['mongoUser', user?.email], () => fetch(`http://localhost:5000/user/${user?.email}`, {
+    const { data: mongoUser, isLoading, refetch } = useQuery(['mongoUser', user?.email], () => fetch(`https://sheltered-scrubland-72081.herokuapp.com/user/${user?.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -51,7 +51,7 @@ const MyProfile = () => {
                     photoURL: img,
                     education: data.education
                 }
-                fetch(`http://localhost:5000/user/${user?.email}`, {
+                fetch(`https://sheltered-scrubland-72081.herokuapp.com/user/${user?.email}`, {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json',

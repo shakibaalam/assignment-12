@@ -12,7 +12,7 @@ const MyOrder = () => {
     const navigate = useNavigate();
     const [cancel, setCancel] = useState(null)
 
-    const { data: orders, isLoading, refetch } = useQuery(['orders', user?.email], () => fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery(['orders', user?.email], () => fetch(`https://sheltered-scrubland-72081.herokuapp.com/orders?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyOrder = () => {
     }
     // console.log(cancel);
     const cancelOrder = (id) => {
-        fetch(`http://localhost:5000/orders/${id}?email=${cancel?.email}`, {
+        fetch(`https://sheltered-scrubland-72081.herokuapp.com/orders/${id}?email=${cancel?.email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

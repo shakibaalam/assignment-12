@@ -5,7 +5,7 @@ const DeleteUser = ({ deleteUser, setDeleteUser, refetch }) => {
     console.log(deleteUser);
     const { name, email } = deleteUser;
     const handelDelete = () => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://sheltered-scrubland-72081.herokuapp.com/user/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

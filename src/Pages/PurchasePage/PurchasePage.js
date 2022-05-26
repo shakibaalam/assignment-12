@@ -25,7 +25,7 @@ const PurchasePage = () => {
             quantity: data.quantity
         }
         console.log(order);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://sheltered-scrubland-72081.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

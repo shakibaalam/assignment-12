@@ -11,7 +11,7 @@ const Payment = () => {
 
     const stripePromise = loadStripe('pk_test_51L1WpKFIH4cz62rlYdrqvvkHLUMvzD4E4liy02Y9ksbprp6Hb0cxmbbDDP0pAarbYo8AEpo4T0gi6XInArYISIcM003UHl2AcT');
 
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://sheltered-scrubland-72081.herokuapp.com/orders/${id}`;
     const { data: order, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
     useEffect(() => {
         const totalPrice = price * quantity;
         // console.log(totalPrice);
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://sheltered-scrubland-72081.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             };
 
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://sheltered-scrubland-72081.herokuapp.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

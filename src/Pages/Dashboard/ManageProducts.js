@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [deleteOrder, setDeleteOrder] = useState(null)
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://sheltered-scrubland-72081.herokuapp.com/products/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -1,3 +1,28 @@
+# Paintgenix
+
+Description:We deliver several tools of painting in this website.This site is a single page application where it has home page,blog,dashboard,products,login/signup etc.
+
+Client side github link :[Client side private repo github link](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-shakibaalam)
+
+Client side firebase live link: [https://assignment-12-f602b.web.app/](https://assignment-12-f602b.web.app/)
+
+
+
+Client side github link : [Server side private repo github link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-shakibaalam)
+
+Admin Email: shakibaalam092@gmail.com
+Admin Pass : 123456
+
+## About this project are:
+- This project related with a manufacturing about paint tools
+- In this project there is a home page with navbar,banner,products,business summary ,footer etc. 
+- In products page all products are shown
+- User authentication done by login/signup/google 
+- There is a dashboard page where user can update his/her profile ,see particular user order ,cancel order and add a review
+- Dashboard page an admin can update his/her profile ,see all user and order,manage order and user,delete user and cancel order etc
+- And also a question answering part in blog page
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

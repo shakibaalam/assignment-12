@@ -8,7 +8,7 @@ const ProductSection = () => {
     const [featured, setFeatured] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/featured')
+        fetch('https://sheltered-scrubland-72081.herokuapp.com/featured')
             .then(res => res.json())
             .then(data => setFeatured(data))
     }, []);
