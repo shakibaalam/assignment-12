@@ -47,7 +47,7 @@ const BusinessSummary = () => {
                 </div>
                 <div className='flex justify-center items-center'>
                     <button className='btn btn-accent py-3 px-8 text-white'>Request for Quote</button>
-                    <button className='btn btn-secondary py-3 px-8 ml-4 text-white'>Contact Us</button>
+                    <button className='btn btn-primary py-3 px-8 ml-4 text-white'>Contact Us</button>
                 </div>
             </div>
         </div>

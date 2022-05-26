@@ -51,7 +51,7 @@ const Login = () => {
     return (
         <div className="card w-1/2 mx-auto my-auto bg-base-100 shadow-xl">
             <div className="card-body">
-                <h2 className="card-title justify-center text-secondary text-3xl font-bold ">Login</h2>
+                <h2 className="card-title justify-center text-blue-900 text-3xl font-bold ">Login</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} className=' grid grid-cols-1 gap-3 justify-items-center'>
 

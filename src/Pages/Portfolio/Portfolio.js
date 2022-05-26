@@ -2,10 +2,10 @@ import React from 'react';
 
 const Portfolio = () => {
     return (
-        <div className='container font-serif'>
+        <div className='font-serif'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src="https://i.ibb.co/nMvmP4y/IMG-20220504-215404.jpg" className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <img src="https://i.ibb.co/nMvmP4y/IMG-20220504-215404.jpg" className="lg:max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div className='lg:mr-10'>
                         <p className='font-semibold mb-5 text-lg text-purple-400 uppercase'>mern stack web developer</p>
                         <h1 className="text-5xl font-bold mb-2 ">Hello, I'm <span className='text-primary'>Shakiba</span></h1>
