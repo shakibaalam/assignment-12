@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 
 const ManageProducts = () => {
     const [products, setProducts] = useProducts();
+    const [deleteOrder, setDeleteOrder] = useState(null)
+
     const handleDelete = id => {
         fetch(`http://localhost:5000/products/${id}`, {
             method: 'DELETE',
@@ -16,6 +18,7 @@ const ManageProducts = () => {
                 if (data.deletedCount) {
                     const remaining = products.filter(product => product._id !== id);
                     setProducts(remaining)
+                    setDeleteOrder(null)
                 }
             })
     }
@@ -39,14 +42,31 @@ const ManageProducts = () => {
                                     <td>{product.name}</td>
                                     <td>{product.available}</td>
                                     <td>
-                                        <label onClick={() => handleDelete(product._id)} className="btn btn-xs text-white btn-error modal-button">X</label>
+                                        <label for="delete-confirm" onClick={() => setDeleteOrder(product)} className="btn btn-xs text-white btn-error modal-button">X</label>
                                     </td>
                                 </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            {
+                deleteOrder && <div>
+                    <input type="checkbox" id="delete-confirm" className="modal-toggle" />
+                    <div className="modal">
+                        <div className="modal-box">
+                            <h3 className="font-bold text-lg">Are you sure for cancel order  :{deleteOrder.productName} </h3>
+                            <p className="py-4">Are you sure!</p>
+                            <div className="modal-action">
+                                <button onClick={() => handleDelete(deleteOrder._id)} className="btn btn-xs text-white btn-error">Yes</button>
+                                <label for="delete-confirm" className="btn btn-xs text-white">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
         </div>
+
     );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderRow = () => {
+const Portfolio = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const OrderRow = () => {
     );
 };
 
-export default OrderRow;
+export default Portfolio;

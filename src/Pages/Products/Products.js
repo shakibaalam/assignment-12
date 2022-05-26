@@ -13,12 +13,12 @@ const Products = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
                 {
                     products.map(product =>
-                        <div class="card w-96 bg-base-100 shadow-xl">
+                        <div className="card w-96 bg-base-100 shadow-xl">
                             <figure><img src={product.img} alt="Shoes" /></figure>
-                            <div class="card-body">
-                                <h2 class="card-title">{product.name}</h2>
+                            <div className="card-body">
+                                <h2 className="card-title">{product.name}</h2>
                                 <p>{product.desc}</p>
-                                <div class="card-actions justify-end">
+                                <div className="card-actions justify-end">
                                     <button onClick={() => navigateProduct(product._id)} className="btn btn-primary hover:btn-secondary">Purchase</button>
                                 </div>
                             </div>

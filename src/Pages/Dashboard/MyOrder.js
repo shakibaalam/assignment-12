@@ -30,7 +30,7 @@ const MyOrder = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log(cancel);
+    // console.log(cancel);
     const cancelOrder = (id) => {
         fetch(`http://localhost:5000/orders/${id}?email=${cancel?.email}`, {
             method: 'DELETE',
@@ -79,7 +79,12 @@ const MyOrder = () => {
                                         <td>{order.quantity}</td>
                                         <td>{order.price} / u</td>
                                         <td>
-                                            <label onClick={() => setCancel(order)} htmlFor="cancel-confirm" className="btn btn-xs text-white btn-error modal-button">Cancel </label>
+                                            {
+                                                !order.paid ?
+                                                    <label onClick={() => setCancel(order)} htmlFor="cancel-confirm" className="btn btn-xs text-white btn-error modal-button">Cancel </label>
+                                                    :
+                                                    <button disabled className="btn btn-xs text-white btn-error modal-button">Cancel </button>
+                                            }
                                         </td>
                                         <td>
                                             {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-accent text-white'>Pay</button></Link>}
