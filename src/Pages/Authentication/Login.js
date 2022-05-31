@@ -109,7 +109,7 @@ const Login = () => {
 
                     <input className='btn  text-white uppercase font-bold  w-full max-w-xs' type="submit" />
 
-                    <p>New to Doctors Portal? <Link className='text-secondary' to='/register'>Signup</Link> </p>
+                    <p>New to Paintgenix? <Link className='text-secondary' to='/register'>Signup</Link> </p>
 
                     {signInError}
                 </form>
