@@ -14,8 +14,8 @@ const ReviewSection = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-3xl text-center my-10 font-serif text-blue-900 font-bold'>Our Client Reviews</h2>
-            <div className="carousel carousel-center w-full p-20 bg-slate-300 space-x-32 text-blue-900  rounded-box">
+            <h2 className='text-3xl text-center mb-5 font-serif text-blue-900 font-bold'>Our Client Reviews</h2>
+            <div className="carousel carousel-center w-full py-20 px-28 bg-slate-100 space-x-32 text-blue-900  rounded-box">
                 {
                     reviews.map(review => <div key={review._id} className="carousel-item">
                         <div className='mb-5'>

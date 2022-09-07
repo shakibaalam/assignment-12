@@ -112,7 +112,7 @@ const Register = () => {
 
                     <input className='btn  text-white uppercase font-bold  w-full max-w-xs' type="submit" />
 
-                    <p>Already have an account? <Link className='text-secondary' to='/login'>SignIn</Link> </p>
+                    <p>Already have an account? <Link className='text-blue-900' to='/login'>SignIn</Link> </p>
 
                     {signUpError}
                 </form>

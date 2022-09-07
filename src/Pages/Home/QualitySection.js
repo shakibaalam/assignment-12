@@ -2,7 +2,7 @@ import React from 'react';
 
 const QualitySection = () => {
     return (
-        <div className="hero my-32 bg-base-100">
+        <div className="hero my-28 py-4 bg-slate-100">
             <div className="hero-content flex-col lg:flex-row">
                 <img src="https://thumbs.dreamstime.com/b/paint-flowing-brush-white-background-138317610.jpg" className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div className=' lg:ml-20'>

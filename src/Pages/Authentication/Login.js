@@ -97,7 +97,7 @@ const Login = () => {
 
                         <label className="label">
                             <span className="label-text-alt">Forget password?</span>
-                            <span onClick={reset} className="label-text-alt text-secondary">Reset password</span>
+                            <span onClick={reset} className="label-text-alt cursor-pointer text-blue-900">Reset password</span>
                         </label>
 
                         <label className="label">
@@ -109,7 +109,7 @@ const Login = () => {
 
                     <input className='btn  text-white uppercase font-bold  w-full max-w-xs' type="submit" />
 
-                    <p>New to Paintgenix? <Link className='text-secondary' to='/register'>Signup</Link> </p>
+                    <p>New to Paintgenix? <Link className='text-blue-900' to='/register'>Signup</Link> </p>
 
                     {signInError}
                 </form>

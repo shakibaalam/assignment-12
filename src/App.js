@@ -26,7 +26,7 @@ import Portfolio from './Pages/Portfolio/Portfolio';
 
 function App() {
   return (
-    <div className='container font-sans'>
+    <div className=' font-sans'>
       <NavBar></NavBar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

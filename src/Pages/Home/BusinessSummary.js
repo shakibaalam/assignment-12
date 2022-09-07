@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessSummary = () => {
     return (
-        <div className='lg:mx-20 my-32 py-20'>
+        <div className='lg:mx-20 py-20'>
             <h1 className="text-4xl text-center text-blue-900 font-bold  mt-10 mb-2">Millions Business Trust Us</h1>
             <p className='text-xl text-center mb-10'>Try to understand users expectation</p>
 
